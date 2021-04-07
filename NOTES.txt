@@ -1,0 +1,17 @@
+1- yarn add jest @types/jest -D
+2- yarn jest --init
+3- yarn add ts-jest -D
+4- no arquivo jest.config.ts alterar:
+  bail: true,
+  clearMocks: true,
+  preset: 'ts-jest',
+  testMatch: ["**/*.spec.ts"],
+
+5- Configurando coverage, também no jest.config.ts
+  collectCoverage: true,
+  collectCoverageFrom: ['<rootDir>/src/modules/**/useCases/**/*.ts'],
+  coverageDirectory: 'coverage',
+  coverageReporters: [
+    "text",
+    "lcov",
+  ],
